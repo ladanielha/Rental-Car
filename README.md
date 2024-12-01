@@ -1,5 +1,5 @@
 
-# Description about thgis project
+# Description about this project
 1. Project Structure
 Modular dan scalable project: handlers/ , dtos , services/ , models/ ,
 routes/ .
