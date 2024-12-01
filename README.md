@@ -8,8 +8,8 @@ routes/ .
 4. Database MySql
 
 # Reference Docs :
-Golang Documentation (https://golang.org/doc/)
-GORM Documentation (https://gorm.io/)
-Gin Framework Documentation (https://gin-gonic.com/)
-Go Migrate Documentation (https://github.com/golang-migrate/migrate)
-JWT Documentation (https://jwt.io/
+1. Golang Documentation (https://golang.org/doc/)
+2. GORM Documentation (https://gorm.io/)
+3. Gin Framework Documentation (https://gin-gonic.com/)
+4. Go Migrate Documentation (https://github.com/golang-migrate/migrate)
+5. JWT Documentation (https://jwt.io/
