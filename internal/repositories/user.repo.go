@@ -8,7 +8,7 @@ import (
 
 type RepoUser interface {
 	Register(*models.Users) error
-	GetUser(username string) (*models.Users, error)
+	GetUser(email string) (*models.Users, error)
 }
 
 type repoUser struct {
@@ -24,10 +24,10 @@ func (r *repoUser) Register(user *models.Users) error {
 	return err
 }
 
-func (r *repoUser) GetUser(username string) (*models.Users, error) {
+func (r *repoUser) GetUser(email string) (*models.Users, error) {
 	user := &models.Users{}
 
-	err := r.dB.Find(user, "username = ?", username).Error
+	err := r.dB.Find(user, "email = ?", email).Error
 	if err != nil {
 		return nil, err
 	}

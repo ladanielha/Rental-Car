@@ -28,6 +28,7 @@ func main() {
 	// Routes
 	routes.UserRoutes(r, db)
 	routes.CarsRoutes(r, db)
+	routes.BookingRoutes(r, db)
 
 	r.Run() // listen and serve on 0.0.0.0:8080
 }

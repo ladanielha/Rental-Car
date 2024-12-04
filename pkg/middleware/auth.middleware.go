@@ -37,7 +37,7 @@ func AuthJWT() gin.HandlerFunc {
 		}
 
 		if claims, ok := token.Claims.(jwt.MapClaims); ok {
-			ctx.Set("username", claims["username"])
+			ctx.Set("email", claims["email"])
 			ctx.Set("role", claims["role"])
 		}
 

@@ -21,17 +21,17 @@ func NewServiceUser(repo repositories.RepoUser) *ServiceUser {
 }
 
 func (s *ServiceUser) Login(req dtos.LoginReq) (*common.RespCreate, error) {
-	user, err := s.userRepo.GetUser(req.Username)
+	user, err := s.userRepo.GetUser(req.Email)
 	if err != nil {
 		if err == gorm.ErrRecordNotFound {
-			return nil, errors.New("Username / Password Salah!")
+			return nil, errors.New("email or password didn't match!")
 		}
 		return nil, err
 	}
 
 	err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password))
 	if err != nil {
-		return nil, errors.New("Username / Password Salah!")
+		return nil, errors.New("email or password didn't match!")
 	}
 
 	authToken, err := auth.GenerateJWT(user.Username, user.Role)
